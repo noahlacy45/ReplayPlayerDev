@@ -1,2 +1,2 @@
 # ReplayPlayerDev
-# Creating the develop branch
+# 10/18 & 10/19 2024 -- Noah Lacy added the CombineBlastSheets.py file to combine all the sheets from Blast into 1 data frame & csv which also pulls in the player name by email associated with the account. 
