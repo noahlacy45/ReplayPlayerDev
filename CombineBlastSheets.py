@@ -3,7 +3,8 @@ import os
 from datetime import datetime
 
 # Define the path to your Excel file
-excel_file_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\Oct24\Oct1-Oct16.xlsx"
+# !! MAKE SURE YOU CHANGE THE FILE NAME EACH UPLOAD !!
+excel_file_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\Oct24\Oct16-Oct21.xlsx"
 
 # Define the path to the CSV file for player names
 player_csv_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\PlayerName\Blast Players_Oct24.csv"
