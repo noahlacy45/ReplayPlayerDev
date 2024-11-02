@@ -7,7 +7,7 @@ from datetime import datetime
 excel_file_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\Oct24\Oct16-Oct21.xlsx"
 
 # Define the path to the CSV file for player names
-player_csv_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\PlayerName\Blast Players_Oct24.csv"
+player_csv_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\PlayerName\BlastPlayers.csv"
 
 # Define the output folder (make sure this folder exists)
 output_folder = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\Output"

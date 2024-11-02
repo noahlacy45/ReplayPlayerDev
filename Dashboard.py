@@ -3,7 +3,7 @@
 import pandas as pd
 from bokeh.io import curdoc
 from bokeh.layouts import column, row
-from bokeh.models import ColumnDataSource, Select, Div
+from bokeh.models import ColumnDataSource, Select, Div, CustomJS, DatePicker
 from bokeh.plotting import figure
 
 # Load data from CSV and handle any potential errors with a try-except
