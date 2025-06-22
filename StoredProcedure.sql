@@ -1,3 +1,5 @@
+--SP
+
 DELIMITER //
 
 CREATE PROCEDURE UpdatePlayerDev_HittingTables()
