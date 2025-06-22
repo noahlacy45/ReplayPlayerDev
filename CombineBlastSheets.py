@@ -1,3 +1,7 @@
+# DO NOT USE - OUTDATED
+
+#If I had to go back to manually pulling csv files from Blast instead of using API
+
 import pandas as pd
 import os
 from datetime import datetime
