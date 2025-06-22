@@ -4,13 +4,13 @@ from datetime import datetime
 
 # Define the path to your Excel file
 # !! MAKE SURE YOU CHANGE THE FILE NAME EACH UPLOAD !!
-excel_file_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\Oct24\Oct16-Oct21.xlsx"
+excel_file_path = r"C:\Users\noahl\OneDrive\Documents\BlastData\Full Team Report - 2024-07-01 - 2024-07-01 - 1734036503.xlsx"
 
 # Define the path to the CSV file for player names
-player_csv_path = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\PlayerName\BlastPlayers.csv"
+player_csv_path = r"C:\Users\noahl\OneDrive\Documents\BlastData\BlastPlayers.csv"
 
 # Define the output folder (make sure this folder exists)
-output_folder = r"C:\Users\noahl\OneDrive\Documents\Git Repos\ReplayPlayerDev\BlastData\Output"
+output_folder = r"C:\Users\noahl\OneDrive\Documents\BlastData"
 
 # Create a list to hold the modified DataFrames
 all_data = []
