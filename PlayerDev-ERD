@@ -1,0 +1,745 @@
+Table blast_swing_metrics {
+action_id int [pk]
+blast_id varchar(255) [ ref: > BlastSwingSilver.blast_id]
+player_id int
+player_email varchar(255)
+player_name varchar(255)
+academy_id int
+created_date date
+created_time time
+has_video bool
+video_id int
+handedness int
+sport_id int
+sync_timestamp timestamp
+equitment_id char
+equitment_name varchar(50)
+equitment_nickname varchar(50)
+metric_plane_score int
+metric_plane_score_display int
+metric_plane_score_unit int
+metric_connection_score int
+metric_connection_score_display int
+metric_connection_score_unit int
+metric_rotation_score int
+metric_rotation_score_display int
+metric_early_connection int
+metric_early_connection_display int
+metric_early_connection_unit int
+metric_bat_path_angle varchar(5)
+metric_bat_path_angle_display varchar(5)
+metric_bat_path_angle_unit varchar(5) 
+metric_swing_speed decimal
+metric_swing_speed_display decimal
+metric_swing_speed_unit decimal
+metric_connection varchar(5)
+metric_connection_display int 
+metric_connection_unit varchar(5) 
+metric_vertical_bat_angle varchar(5)
+metric_vertical_bat_angle_display varchar(5)
+metric_vertical_bat_angle_unit varchar(5)
+metric_planar_efficiency int 
+metric_planar_efficiency_display varchar(5)
+metric_planar_efficiency_unit varchar(5)
+metric_peak_hand_speed decimal
+metric_peak_hand_speed_display decimal
+metric_peak_hand_speed_unit varchar(10)
+metric_power decimal 
+metric_power_display decimal
+metric_power_unit varchar(10)
+metric_rotational_acceleration decimal 
+metric_rotational_acceleration_display decimal 
+metric_rotational_acceleration_unit varchar(10)
+metric_time_to_contact decimal
+metric_time_to_contact_display decimal
+metric_time_to_contact_unit varchar(10)
+}
+
+
+
+Table BlastSwingSilver{
+action_id int 
+blast_id varchar(255) [pk, ref: > blast_team_data.blast_user_id]
+player_id int
+player_email varchar(255)
+player_name varchar(255)
+academy_id int
+has_video bool
+video_id int
+handedness int
+sport_id int
+sync_timestamp timestamp
+equitment_id char
+equitment_name varchar(50)
+equitment_nickname varchar(50)
+metric_plane_score int
+metric_connection_score int
+metric_rotation_score int
+metric_early_connection int
+metric_bat_path_angle varchar(5)
+metric_swing_speed decimal
+metric_connection varchar(5)
+metric_vertical_bat_angle varchar(5)
+metric_planar_efficiency int 
+metric_peak_hand_speed decimal
+metric_power decimal 
+metric_rotational_acceleration decimal 
+metric_time_to_contact decimal
+TimeStamp timestamp
+}
+
+Table blast_team_data
+{
+id int [pk]
+blast_user_id varchar(255)  [ ref: > blast_swing_metrics.blast_id]
+external_id varchar(255)
+email varchar(50)
+name varchar(36)
+first_name varchar(36)
+last_name varchar(36)
+avatar varchar(255)
+handedness int
+jersey_number int
+position varchar(36)
+total_actions bigint
+total_actions_extended bigint
+has_actions tinyint
+pcr_situation tinyint
+sync_timestamp datetime
+avg_bat_path_angle double
+avg_bat_path_angle_display double
+avg_connection double
+avg_connection_display double
+avg_early_connection double
+avg_early_connection_display double
+avg_exit_velocity double
+avg_exit_velocity_display double
+avg_launch_angle double
+avg_launch_angle_display double
+avg_peak_hand_speed double
+avg_peak_hand_speed_display double
+avg_planar_efficiency_display double
+avg_plane_score double
+avg_plance_score_display double
+avg_power double
+avg_power_display double
+avg_rotation_score double
+avg_rotation_score_display double
+avg_rotational_acceleration double
+avg_rotational_acceleration_display double
+avg_swing_speed double
+avg_swing_speed_display double
+avg_time_to_contact double
+acg_time_to_contact_display double
+avg_vertical_bat_angle double
+avg_vertical_bat_angle_display double
+}
+
+
+
+
+
+Table HittingBronze
+{
+UserName varchar(255) 
+Id int [pk, ref: > HittingSilver.Id]
+UId int
+SId int
+SnId int
+SnUId bigint
+TS datetime
+UsId int
+UsUId bigint
+Ms int
+Res int
+HT int
+PT int
+FId int
+QD int
+Elv float
+Actv int
+MasterID varchar(255)
+Uuid varchar(36)
+SnUuid varchar(36)
+UsUuid varchar(36)
+PitchAngle int
+LastModified float
+Created float
+imported_at datetime
+source_file varchar(255)
+EBV1 float
+EBV2 float
+EBV3 float
+Dist float
+PV decimal
+Velo double
+RadarVelo decimal
+GD double
+action_id int 
+blast_id int 
+player_id int
+player_email varchar(255)
+player_name varchar(255)
+academy_id int
+has_video bool
+video_id int
+handedness int
+sport_id int
+sync_timestamp timestamp
+equitment_id char
+equitment_name varchar(50)
+equitment_nickname varchar(50)
+metric_plane_score int
+metric_connection_score int
+metric_rotation_score int
+metric_early_connection int
+metric_bat_path_angle varchar(5)
+metric_vertical_bat_angle varchar(5)
+metric_planar_efficiency int 
+metric_peak_hand_speed decimal
+metric_power decimal 
+metric_rotational_acceleration decimal 
+metric_time_to_contact decimal
+SmashFactor double
+SwingEfficiency double
+}
+
+
+
+Table HittingGold
+{
+UserName varchar(255) [pk, ref: > HitTraxUsers.UserName]
+Id int [pk]
+UId int
+SId int
+SnId int
+SnUId bigint
+TS datetime
+UsId int
+UsUId bigint
+Ms int
+Res int
+HT int
+PT int
+FId int
+QD int
+Elv float
+Actv int
+MasterID varchar(255)
+Uuid varchar(36)
+SnUuid varchar(36)
+UsUuid varchar(36)
+PitchAngle int
+LastModified float
+Created float
+imported_at datetime
+source_file varchar(255)
+EBV1 float
+EBV2 float
+EBV3 float
+Dist float
+PV decimal
+Velo double
+RadarVelo decimal
+GD double
+action_id int 
+blast_id int 
+player_id int
+player_email varchar(255)
+player_name varchar(255)
+academy_id int
+has_video bool
+video_id int
+handedness int
+sport_id int
+sync_timestamp timestamp
+equitment_id char
+equitment_name varchar(50)
+equitment_nickname varchar(50)
+metric_plane_score int
+metric_connection_score int
+metric_rotation_score int
+metric_early_connection int
+metric_bat_path_angle varchar(5)
+metric_swing_speed decimal
+metric_connection varchar(5)
+metric_vertical_bat_angle varchar(5)
+metric_planar_efficiency int 
+metric_peak_hand_speed decimal
+metric_power decimal 
+metric_rotational_acceleration decimal 
+metric_time_to_contact decimal
+SmashFactor double
+SwingEfficiency double
+}
+
+
+
+Table HittingSilver 
+{
+UserName varchar(255)
+Id int [pk, ref: > HittingGold.Id]
+UId int
+SId int
+SnId int
+SnUId bigint
+TS datetime
+UsId int
+UsUId bigint
+Ms int
+Res int
+HT int
+PT int
+FId int
+QD int
+Elv float
+MasterID varchar(255)
+Uuid varchar(36)
+SnUuid varchar(36)
+UsUuid varchar(36)
+PitchAngle int
+LastModified float
+Created float
+imported_at datetime
+source_file varchar(255)
+EBV1 float
+EBV2 float
+EBV3 float
+Dist float
+Velo double
+RadarVelo decimal
+GD double
+action_id int 
+blast_id int 
+player_id int
+player_email varchar(255)
+player_name varchar(255)
+academy_id int
+has_video bool
+video_id int
+handedness int
+sport_id int
+sync_timestamp timestamp
+equitment_id char
+equitment_name varchar(50)
+equitment_nickname varchar(50)
+metric_plane_score int
+metric_connection_score int
+metric_rotation_score int
+metric_early_connection int
+metric_bat_path_angle varchar(5)
+metric_swing_speed decimal
+metric_connection varchar(5)
+metric_vertical_bat_angle varchar(5)
+metric_planar_efficiency int 
+metric_peak_hand_speed decimal
+metric_power decimal 
+metric_rotational_acceleration decimal 
+metric_time_to_contact decimal
+}
+
+
+Table HitTraxComplete
+{
+Id int [pk]
+UId int [ref: > HitTraxUsers.UId]
+SId int
+SnId int
+SnUId bigint
+TS datetime
+UsId int
+UsUId bigint
+Ms int
+EBV1 float
+EBV2 float
+EBV3 float
+Dist float
+GD float
+PV int
+Res int
+HT int
+PT int
+FId int
+QD int
+PS1 float
+PS2 float
+PS3 float
+PE1 float
+PE2 float
+PE3 float
+PP1 int
+PP2 int
+PP3 int
+PC1 float
+PC2 float
+PC3 float
+PCf1 int
+PCf2 int
+PCf3 int
+PCf4 int
+PCf5 int
+PCf6 int
+PBH int
+PBV int
+Elv float
+Actv int
+OId int
+OUId int
+BM int
+SScr int
+SUuid varchar(36)
+SSUuid varchar(36)
+SM9 int
+SM10 int
+SM11 int
+SM12 int
+SM13 int
+SM14 int
+SM15 int
+SM16 int
+SM17 int
+SM18 int
+SM19 int
+MasterID varchar(255)
+Uuid varchar(36)
+SnUuid varchar(36)
+PopT int
+TransT int
+CaughtStealingDT int
+BunceBall int
+HorzAngle float
+Velo float
+UsUuid varchar(36)
+RadarVelo int
+PitchAngle int
+BatId int
+BatUId int
+Intersect1 int
+Intersect2 int
+Intersect3 int
+Hand int
+BatModelUuid float
+PeloteroOutcome int
+ProPlayAIId int
+Points int
+ResultRuns int
+LastModified float
+Created float
+imported_at datetime
+source_file varchar(255)
+UserName varchar(255)
+}
+
+Table hittrax_etl_status
+{
+source_uri varchar(255)
+date_hash varchar(32)
+status varchar(50)
+loaded_at datetime
+error varchar(1000)
+}
+
+Table HitTraxSwingSilver
+{
+UserName varchar(255) [ref: > HitTraxUsers.UserName]
+Id int 
+UId int
+SId int
+SnId int
+SnUId bigint
+TS datetime
+UsUId bigint
+MS int
+Res int
+HT int
+PT int
+FId int
+QD int
+Elv float
+Actv int
+MasterID varchar(255)
+Uuid varchar(36)
+SnUuid varchar(36)
+USUuid varchar(36)
+PitchAngle int
+LastModified float
+Created float
+imported_at datetime
+source_file varchar(255)
+EBV1 double
+EBV2 double
+EBV3 double
+Dist double
+PV decimal
+Velo double
+RadarVelo decimal
+GD double
+}
+
+
+Table HitTraxUsers 
+{
+Id int [pk]
+UId int
+UserName varchar(255)
+}
+
+
+Table PlaysExport 
+{
+Id bigint [pk, ref: > SessionExport.Id]
+UID int
+SId int
+SnId int
+SnUId bigint
+TS datetime
+UsId int
+UsUId bigint
+Ms int
+EBV1 float
+EBV2 float
+EBV3 float
+Dist float
+GD float
+PV int
+Res int
+HT int
+PT int
+FId int
+QD int
+PS1 float
+PS2 float
+PS3 float
+PE1 float
+PE2 float
+PE3 float
+PP1 int
+PP2 int
+PP3 int
+PC1 float
+PC2 float
+PC3 float
+PCf1 int
+PCf2 int
+PCf3 int
+PCf4 int
+PCf5 int
+PCf6 int
+PBH int
+PBV int
+Elv float
+Actv int
+OId int 
+OUId int
+BM int
+SScr int
+SUuid varchar(36)
+SSUuid varchar(36)
+SM9 int
+SM10 int
+SM11 int
+SM12 int
+SM13 int
+SM14 int
+SM15 int
+SM16 int
+SM17 int 
+SM18 int
+SM19 int
+MasterID varchar(255)
+Uuid varchar(36)
+SnUuid varchar(36)
+PopT int
+TransT int
+CaughtStealingDT int
+BounceBall int
+HorzAngle float
+Velo float
+UsUuid varchar(36)
+RadarVelo int
+PitchAngle int
+BatId int
+BadUId int
+Intersect1 int
+Intersect2 int
+Intersect3 int
+Hand int
+BatModelUuid float
+PeloteroOutcome int
+ProPlayAIId int
+Points int
+ResultRuns int
+LastModified int
+Created flaot
+source_file varchar(255)
+imported_at datetime   
+}
+
+
+
+
+Table RBI_HitTraxSwingSilver 
+{
+PlayerName varchar(255) [ ref: > RBI_Players.PlayerName]
+RBI_Player int
+Class int
+Username varchar(255) 
+Id int [pk]
+UId int [ref: > HitTraxUsers.UId]
+SId int
+SnId int
+SnUId bigint
+TS datetime
+UsUId bigint
+MS int
+Res int
+HT int
+PT int
+FId int
+QD int
+Elv float
+Actv int
+MasterID varchar(255)
+Uuid varchar(36)
+SnUuid varchar(36)
+UsUuid varchar(36)
+PitchAngle int
+LastModified float
+Created float
+imported_at datetime
+source_file varchar(255)
+EBV1 double 
+EBV2 double
+EBV3 double
+Dist double
+PV decimal
+Velo double
+RadarVelo decimal
+GD double
+}
+
+
+Table RBI_Players
+{
+PlayerName varchar(255) [pk]
+RBI_Player int
+Class int
+}
+
+Table SessionExport 
+{
+Id bigint [pk, ref: > HitTraxUsers.Id]
+UId int
+SId int
+CId int 
+UsId int
+UsUId bigint
+UserName varchar(25)
+CustomID varchar(25)
+UserUiid varchar(36)
+CIcId int
+CicUId bigint
+EventUuid varchar(36)
+Actv int
+TS datetime
+St int
+Type int
+SL int
+GT int
+MPV float
+MEV float
+MEVT float
+APV float
+AEV float
+AEIv float
+AD float
+MD float
+AGD float
+MGD float
+PC int
+HC int
+Sing int
+Doub int
+Trip int
+Home int
+Foul int
+Strk int
+Ball int
+AVG float
+SLG float
+LDP int
+FBP float
+GBP float 
+LIP float
+RIP float
+CIP float
+LOP float
+ROP float
+COP float 
+AHZ1 float
+AHZ2 float
+AHZ3 float
+AHZ4 float
+AHZ5 float
+AHZ6 float
+AHZ7 int
+AHZ8 int
+AHZ9 int
+AHZ10 float
+AHZ11 float
+AHZ12 int
+AHZ13 int
+Tag float
+SZB float
+SZT float
+SZW float
+HHC int
+HHV float
+HHVT float
+MBRV int
+ABRV int
+MIM int
+AIM int
+AB int
+SWT int 
+BATM int
+SCR int
+MPTS int
+VB int
+MasterID varchar(255)
+Uuid varchar(36)
+AvgPopT int
+MinPopT int
+AvgTransT int
+MinTransT int
+CaughtSP int
+RBI int
+GameUiid float
+PeloteroBlockId int
+PeleteroDrillId int
+PeleteroPostiveOutcomes int
+PeleteroNegativeOutcomes int
+LastModified float
+Created float
+source_file varchar(255)
+improted_at datetime
+}
+
+
+
+Table WellnessQs{
+Date date
+PlayerName varchar(45) [pk, ref: > RBI_Players.PlayerName]
+Team varchar(45)
+ThrowingWorkout varchar(45)
+HittingWorkout varchar(45)
+Fatigue varchar(45)
+SleepDuration varchar(45)
+MuscleSoreness varchar(45)
+Stress varchar(45)
+Diet varchar(45)
+ArmReadiness varchar(45)
+BodyWeight int
+}
+
+
