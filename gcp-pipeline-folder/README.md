@@ -1,6 +1,6 @@
 This file explains the different files in the gcp-pipeline-folder
 
-csv_detection
+csv_detection\n
 This file is the Google App Script that will run on the Google Drive folders, and is what will trigger the cloud function.
 
 deployment_command
