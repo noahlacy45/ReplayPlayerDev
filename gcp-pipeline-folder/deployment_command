@@ -1,0 +1,9 @@
+gcloud functions deploy ingest_csv \
+  --gen2 \
+  --runtime=python311 \
+  --region=us-east4 \
+  --entry-point=ingest_csv \
+  --trigger-http \
+  --allow-unauthenticated \
+  --timeout=300s \
+  --set-env-vars=INSTANCE_CONNECTION_NAME="norse-coral-441421-r9:us-east4:replay-baseball-player-dev",MYSQL_USER="Test-DP",MYSQL_PASSWORD="testing123",MYSQL_DATABASE="PlayerDev",MYSQL_TABLE="GCP_DP_TEST"
