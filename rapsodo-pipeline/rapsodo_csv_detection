@@ -1,0 +1,32 @@
+const MAIN_FOLDER_ID = '1oL_nvfcFsYQ9GEHdrwYaXYlIv8lVFg7Z';
+const PROCESSED_FOLDER_ID = '19-DsBrzXqBR_b9tles0zy6BKaMfjflzF';
+const CLOUD_RUN_URL = 'https://us-east4-norse-coral-441421-r9.cloudfunctions.net/rapsodo_ingest_csv';
+
+function checkForNewCSV() {
+  const folder = DriveApp.getFolderById(MAIN_FOLDER_ID);
+  const processedFolder = DriveApp.getFolderById(PROCESSED_FOLDER_ID);
+  const files = folder.getFilesByType(MimeType.CSV);
+
+  while (files.hasNext()) {
+    const file = files.next();
+    const csvContent = file.getBlob().getDataAsString();
+
+    const options = {
+      method: 'post',
+      contentType: 'application/json',
+      payload: JSON.stringify({
+        filename: file.getName(),
+        csvData: csvContent
+      })
+    };
+
+    const response = UrlFetchApp.fetch(CLOUD_RUN_URL, options);
+
+    if (response.getResponseCode() === 200) {
+      processedFolder.createFile(file);
+      folder.removeFile(file);
+    } else {
+      Logger.log("Failed to process file: " + file.getName());
+    }
+  }
+}
