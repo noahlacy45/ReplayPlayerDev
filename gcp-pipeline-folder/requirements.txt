@@ -1,0 +1,3 @@
+functions-framework
+pymysql
+cloud-sql-python-connector[pymysql]
