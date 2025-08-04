@@ -1,4 +1,4 @@
-This file explains the different files in the gcp-pipeline-folder
+This file explains the different files in the rapsodo-pipeline folder
 
 rapsodo_csv_detection
 
